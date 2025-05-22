@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { assets } from '../assets/assets'
 
 const Footer = () => {
@@ -17,10 +17,10 @@ const Footer = () => {
         <div>
             <p className='text-xl font-medium mb-5'>COMPANY</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li><NavLink to='/'>Home</NavLink></li>
-                <li><NavLink to='/collection'>Collection</NavLink></li>
-                <li><NavLink to='/about'>About</NavLink></li>
-                <li><NavLink to='/contact'>Contact</NavLink></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/collection'>Collection</Link></li>
+                <li><Link to='/about'>About</Link></li>
+                <li><Link to='/contact'>Contact</Link></li>
             </ul>
         </div>
 

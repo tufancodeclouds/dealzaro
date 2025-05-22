@@ -80,13 +80,13 @@ const Product = () => {
 
       {/* ---------- Description & Review Section ------------- */}
       <div className='mt-20'>
-        <div className='flex'>
-          <b className='border px-5 py-3 text-sm'>Description</b>
-          <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
+        <div>
+          <b className='pb-3 text-sm border-b-2 border-gray-700'>Description</b>
+          {/* <p className='border px-5 py-3 text-sm'>Reviews (122)</p> */}
         </div>
-        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
-          <p>An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.</p>
-          <p>E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
+        <div className='flex flex-col gap-4 pt-6 text-sm text-gray-500'>
+          <p>Dealzaro is a modern e-commerce platform dedicated to making fashion accessible and convenient. Our online store allows customers to browse, discover, and shop a wide range of clothing items from the comfort of their homes. As a virtual fashion marketplace, Dealzaro empowers individuals and brands to showcase the latest styles, interact with shoppers, and provide a seamless shopping experience without the need for a physical storefront.</p>
+          <p>At Dealzaro, each product page offers detailed descriptions, high-quality images, pricing, and available variations such as size, color, and fit. Our platform is designed to deliver a smooth, stylish, and satisfying online clothing shopping experience for everyone.</p>
         </div>
       </div>
 
