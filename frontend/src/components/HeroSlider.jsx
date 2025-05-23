@@ -26,7 +26,7 @@ const HeroSlider = () => {
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}
-                className='w-full h-[450px] object-cover rounded-[10px]'
+                className='w-full h-[auto] rounded-[10px]'
               />
             </div>
           </SwiperSlide>

@@ -1,11 +1,32 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import {assets} from '../assets/assets'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 
-const Navbar = () => {
+const Header = () => {
 
-    const [visible,setVisible] = useState(false);
+    const location = useLocation()
+    const isHomePage = location.pathname === '/'
+    const [showBorder, setShowBorder] = useState(false)
+
+    useEffect(() => {
+        if (!isHomePage) {
+            setShowBorder(true);
+            return
+        }
+
+        const handleScroll = () => {
+            setShowBorder(window.scrollY > 10)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [isHomePage]);
+
+    const [visible, setVisible] = useState(false);
 
     const {setShowSearch , getCartCount , navigate, token, setToken, setCartItems} = useContext(ShopContext);
 
@@ -17,7 +38,7 @@ const Navbar = () => {
     }
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
+    <header className={`flex items-center justify-between py-5 font-medium sticky top-0 bg-white z-50 ${showBorder ? 'border-b' : ''}`}>
       
       <Link to='/'><img src={assets.logo} className='w-36' alt="" /></Link>
 
@@ -65,7 +86,7 @@ const Navbar = () => {
       </div>
 
         {/* Sidebar menu for small screens */}
-        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all z-[2] ${visible ? 'w-full' : 'w-0'}`}>
                 <div className='flex flex-col text-gray-600'>
                     <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
                         <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
@@ -78,8 +99,8 @@ const Navbar = () => {
                 </div>
         </div>
 
-    </div>
+    </header>
   )
 }
 
-export default Navbar
+export default Header
