@@ -4,6 +4,7 @@ import Routers from "../routes/Routers";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = () => {
   return (
